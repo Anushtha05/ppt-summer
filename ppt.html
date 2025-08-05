@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Automation Projects Presentation</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom styles for background images and overlays */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light background for the overall page */
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 2rem;
+            box-sizing: border-box;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden; /* Ensure content doesn't spill out of blurred background */
+        }
+
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for text readability */
+            z-index: 1;
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            max-width: 90%;
+            margin: 0 auto;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle text shadow for readability */
+            border-radius: 0.75rem; /* Rounded corners for content blocks */
+            padding: 1.5rem;
+        }
+
+        /* Specific slide backgrounds */
+        .slide-1 {
+            background-image: url('https://placehold.co/1920x1080/4A90E2/FFFFFF?text=Blurred+Smart+Home+Garden'); /* Placeholder for blurred smart home/garden */
+        }
+
+        .slide-2 {
+            background-color: #f8fafc; /* Light background for minimalist look */
+            color: #1a202c; /* Dark text for light background */
+            text-shadow: none;
+        }
+
+        .slide-3 {
+            background-image: url('https://placehold.co/1920x1080/34495e/FFFFFF?text=Abstract+Connectivity+Pattern'); /* Placeholder for abstract pattern */
+        }
+
+        .slide-4 {
+            background-image: url('https://placehold.co/1920x1080/2c3e50/FFFFFF?text=Blueprint+Circuit+Graphic'); /* Placeholder for blueprint/circuit */
+        }
+
+        .slide-5 {
+            background-color: #1a202c; /* Dark console-like background */
+        }
+
+        .slide-6 {
+            background-image: url('https://placehold.co/1920x1080/28a745/FFFFFF?text=Vibrant+Garden+with+Water'); /* Placeholder for vibrant garden */
+        }
+
+        .slide-7 {
+            background-color: #3f51b5; /* Technical blue background */
+        }
+
+        .slide-8 {
+            background-color: #1a202c; /* Dark background, consistent with slide 5 */
+        }
+
+        .slide-9 {
+            background-image: url('https://placehold.co/1920x1080/673ab7/FFFFFF?text=Futuristic+Innovation'); /* Placeholder for futuristic background */
+        }
+
+        .slide-10 {
+            background-image: url('https://placehold.co/1920x1080/4A90E2/FFFFFF?text=Subtle+Smart+Home+Garden'); /* Placeholder, subtle version of slide 1 */
+        }
+
+        /* Table styling */
+        .slide table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white for tables on dark backgrounds */
+            border-radius: 0.5rem;
+            overflow: hidden; /* For rounded corners */
+        }
+
+        .slide table th,
+        .slide table td {
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: left;
+            color: inherit; /* Inherit text color from slide */
+        }
+
+        .slide table th {
+            background-color: rgba(255, 255, 255, 0.15);
+            font-weight: bold;
+        }
+
+        .slide-2 table,
+        .slide-7 table { /* Tables on light backgrounds */
+            background-color: rgba(0, 0, 0, 0.05);
+            color: #1a202c;
+        }
+
+        .slide-2 table th,
+        .slide-7 table th {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: #1a202c;
+        }
+
+        /* Image placeholders */
+        .placeholder-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin-top: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Icon styling */
+        .icon-set {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap; /* Allow icons to wrap on smaller screens */
+        }
+
+        .icon-set i {
+            font-size: 2.5rem;
+            color: #a0aec0; /* Light gray for icons */
+        }
+
+        .slide-2 .icon-set i {
+            color: #4a5568; /* Darker gray for icons on light backgrounds */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .slide-content {
+                padding: 1rem;
+            }
+
+            .slide h1 {
+                font-size: 2.5rem;
+            }
+
+            .slide h2 {
+                font-size: 1.75rem;
+            }
+
+            .slide p, .slide li, .slide table {
+                font-size: 0.9rem;
+            }
+
+            .icon-set i {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1: Title Slide -->
+    <div class="slide slide-1">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+            <h1 class="text-6xl font-extrabold mb-4">Smart Automation Projects</h1>
+            <h2 class="text-4xl font-semibold italic mb-8">Using Python and Arduino IDE</h2>
+            <p class="text-2xl mt-8">Presented by:</p>
+            <p class="text-3xl font-bold">Anushtha Jha Anjali</p>
+            <p class="text-xl">(BTECH/15116/22)</p>
+            <p class="text-xl mt-4">Birla Institute of Technology, Mesra, Patna, Bihar</p>
+            <div class="icon-set mt-8">
+                <!-- Placeholder for Institute Logo -->
+                <img src="https://placehold.co/80x80/FFFFFF/000000?text=BIT+Logo" alt="BIT Logo" class="h-20 w-20 rounded-full mx-2">
+                <!-- Arduino Board Graphic -->
+                <img src="https://placehold.co/80x80/00979D/FFFFFF?text=Arduino" alt="Arduino Board" class="h-20 w-20 rounded-full mx-2">
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2: Introduction & Project Overview -->
+    <div class="slide slide-2">
+        <div class="slide-content text-gray-900 bg-white bg-opacity-90 rounded-xl shadow-lg">
+            <h2 class="text-5xl font-bold mb-6">Introduction: The Dawn of Smart Living</h2>
+            <div class="text-left max-w-3xl mx-auto">
+                <h3 class="text-3xl font-semibold mb-4 text-blue-700">What is Smart Automation?</h3>
+                <ul class="list-disc list-inside text-xl leading-relaxed mb-6">
+                    <li>Leveraging technology to control and monitor environments automatically.</li>
+                    <li>Focus on convenience, safety, and resource efficiency.</li>
+                </ul>
+                <h3 class="text-3xl font-semibold mb-4 text-green-700">Project Objective:</h3>
+                <ul class="list-disc list-inside text-xl leading-relaxed mb-6">
+                    <li>Implement cost-effective, IoT-based automation systems.</li>
+                    <li>Utilize Arduino UNO and Python for intelligent control.</li>
+                </ul>
+                <h3 class="text-3xl font-semibold mb-4 text-purple-700">Key Systems Developed:</h3>
+                <ol class="list-decimal list-inside text-xl leading-relaxed">
+                    <li>Smart Home Automation System</li>
+                    <li>Smart Garden Irrigation System</li>
+                </ol>
+            </div>
+            <div class="icon-set mt-8">
+                <i class="fas fa-home"></i>
+                <i class="fas fa-seedling"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fab fa-python"></i>
+                <i class="fas fa-microchip"></i> <!-- Represents Arduino -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Smart Home Automation: System Overview -->
+    <div class="slide slide-3">
+        <div class="slide-overlay"></div>
+        <div class="slide-content bg-black bg-opacity-70 rounded-xl shadow-lg">
+            <h2 class="text-5xl font-bold mb-6">Smart Home Automation: Intelligent Living</h2>
+            <div class="text-left max-w-4xl mx-auto">
+                <h3 class="text-3xl font-semibold mb-4 text-blue-300">Concept:</h3>
+                <p class="text-xl leading-relaxed mb-6">Simulate and manage household appliances via a Python Command-Line Interface (CLI).</p>
+                <h3 class="text-3xl font-semibold mb-4 text-green-300">Core Functionality:</h3>
+                <p class="text-xl leading-relaxed mb-6">Bi-directional communication between Python (control logic) and Arduino (device execution).</p>
+                <h3 class="text-3xl font-semibold mb-4 text-purple-300">Key Features:</h3>
+                <table class="text-xl">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Manual Commands</td>
+                            <td>Turn ON/OFF appliances per room or globally</td>
+                        </tr>
+                        <tr>
+                            <td>Auto Mode</td>
+                            <td>Simulates presence; controls devices every 7s</td>
+                        </tr>
+                        <tr>
+                            <td>Fire Detection</td>
+                            <td>Triggers ALARM when simulated fire occurs</td>
+                        </tr>
+                        <tr>
+                            <td>Water Overflow</td>
+                            <td>Automatically shuts off motor when tank is full</td>
+                        </tr>
+                        <tr>
+                            <td>Real-Time Status</td>
+                            <td>Displays all device/sensor states</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="icon-set mt-8">
+                <i class="fas fa-lightbulb"></i>
+                <i class="fas fa-fan"></i>
+                <i class="fas fa-door-open"></i>
+                <i class="fas fa-fire-extinguisher"></i>
+                <i class="fas fa-water"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Smart Home Automation: Methodology -->
+    <div class="slide slide-4">
+        <div class="slide-overlay"></div>
+        <div class="slide-content bg-black bg-opacity-70 rounded-xl shadow-lg">
+            <h2 class="text-5xl font-bold mb-6">Smart Home: Behind the Scenes</h2>
+            <div class="text-left max-w-4xl mx-auto">
+                <h3 class="text-3xl font-semibold mb-4 text-blue-300">System Architecture:</h3>
+                <ul class="list-disc list-inside text-xl leading-relaxed mb-6">
+                    <li>**Python Command-Line Interface (CLI):** User interaction, high-level control logic.</li>
+                    <li>**Arduino C++ Execution Logic:** Low-level device control, sensor simulation.</li>
+                    <li>**Serial Communication:** The bridge for bi-directional data exchange.</li>
+                </ul>
+                <h3 class="text-3xl font-semibold mb-4 text-green-300">Device Organization:</h3>
+                <ul class="list-disc list-inside text-xl leading-relaxed mb-6">
+                    <li>**Rooms:** Living, Bedroom, Kitchen (Lights, Fans, Doors, TVs, ACs, Heaters, Window Blinds).</li>
+                    <li>**Global:** Water Motor, Alarm Buzzer.</li>
+                </ul>
+                <h3 class="text-3xl font-semibold mb-4 text-purple-300">Communication Flow:</h3>
+                <p class="text-xl leading-relaxed mb-6">Python sends commands (e.g., "TURN_ON LIVING FAN"). Arduino parses, updates state, and sends acknowledgments. Sensors (fire, water) simulated and handled by Arduino.</p>
+                <div class="text-center text-xl font-mono mt-8 p-4 bg-gray-800 rounded-lg">
+                    <p>User <i class="fas fa-arrow-right"></i> Python CLI <i class="fas fa-arrow-right"></i> Serial Communication <i class="fas fa-arrow-right"></i> Arduino UNO <i class="fas fa-arrow-right"></i> Devices/Sensors</p>
+                </div>
+            </div>
+            <div class="icon-set mt-8">
+                <i class="fas fa-laptop-code"></i>
+                <i class="fas fa-usb"></i>
+                <i class="fas fa-microchip"></i>
+                <i class="fas fa-lightbulb"></i>
+                <i class="fas fa-faucet"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Smart Home Automation: Experimental Results -->
+    <div class="slide slide-5">
+        <div class="slide-content bg-gray-900 bg-opacity-90 rounded-xl shadow-lg">
+            <h2 class="text-5xl font-bold mb-6">Smart Home: Validation & Performance</h2>
+            <div class="text-left max-w-4xl mx-auto">
+                <h3 class="text-3xl font-semibold mb-4 text-blue-300">Testing Focus:</h3>
+                <p class="text-xl leading-relaxed mb-6">Real-time responsiveness, correctness of device toggling, event-based automation.</p>
+                <h3 class="text-3xl font-semibold mb-4 text-green-300">Key Performance Metrics:</h3>
+                <ul class="list-disc list-inside text-xl leading-relaxed mb-6">
+                    <li>Command Latency: $< 500$ ms</li>
+                    <li>Serial Stability: No loss in 50+ continuous operations</li>
+                    <li>Automation Logic: Executed as expected for every cycle</li>
+                </ul>
+                <h3 class="text-3xl font-semibold mb-4 text-purple-300">Test Scenarios:</h3>
+                <table class="text-xl">
+                    <thead>
+                        <tr>
+                            <th>Test Case</th>
+                            <th>Command</th>
+                            <th>Expected Behavior</th>
+                            <th>Observed Output</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Turn on Light</td>
+                            <td>`TURN_ON LIVING LIGHT`</td>
+                            <td>Light turns ON in LIVING</td>
+                            <td>Success</td>
+                        </tr>
+                        <tr>
+                            <td>Auto Mode</td>
+                            <td>`AUTO`</td>
+                            <td>Cycles devices ON/OFF based on presence</td>
+                            <td>Success</td>
+                        </tr>
+                        <tr>
+                            <td>Fire Trigger</td>
+                            <td>`FIRE_DETECTED`</td>
+                            <td>Alarm turns ON</td>
+                            <td>Success</td>
+                        </tr>
+                        <tr>
+                            <td>Tank Full</td>
+                            <td>`WATER_TANK_FULL`</td>
+                            <td>Motor shuts OFF automatically</td>
+                            <td>Success</td>
+                        </tr>
+                        <tr>
+                            <td>Device Status</td>
+                            <td>`STATUS`</td>
+                            <td>Lists state of all devices and sensors</td>
+                            <td>Accurate</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <img src="https://placehold.co/600x300/222222/00FF00?text=Python+CLI+Output+Screenshot" alt="Python CLI Output" class="placeholder-image mx-auto">
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Smart Garden Irrigation: System Overview -->
+    <div class="slide slide-6">
+        <div class="slide-overlay"></div>
+        <div class="slide-content bg-black bg-opacity-70 rounded-xl shadow-lg">
+            <h2 class="text-5xl font-bold mb-6">Smart Garden: Automated Water Management</h2>
+            <div class="text-left max-w-4xl mx-auto">
+                <h3 class="text-3xl font-semibold mb-4 text-blue-300">Concept:</h3>
+                <p class="text-xl leading-relaxed mb-6">Automate water supply based on simulated soil moisture conditions.</p>
+                <h3 class="text-3xl font-semibold mb-4 text-green-300">Aim:</h3>
+                <p class="text-xl leading-relaxed mb-6">Reduce water wastage, eliminate constant human supervision.</p>
+                <h3 class="text-3xl font-semibold mb-4 text-purple-300">Control Modes:</h3>
+                <p class="text-xl leading-relaxed mb-6">Manual and Automatic control via CLI.</p>
+                <h3 class="text-3xl font-semibold mb-4 text-yellow-300">Key Features:</h3>
+                <table class="text-xl">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Manual Pump Control</td>
+                            <td>Turn water pump ON/OFF manually via CLI</td>
+                        </tr>
+                        <tr>
+                            <td>Auto Mode</td>
+                            <td>Simulate dry/wet soil every 10s and act accordingly</td>
+                        </tr>
+                        <tr>
+                            <td>Status Check</td>
+                            <td>Display current soil state and pump state</td>
+                        </tr>
+                        <tr>
+                            <td>Bi-Directional Serial</td>
+                            <td>Python sends commands, Arduino acknowledges actions</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="icon-set mt-8">
+                <i class="fas fa-water-ladder"></i> <!-- Represents water pump -->
+                <i class="fas fa-leaf"></i> <!-- Represents plant/garden -->
+                <i class="fas fa-cloud-sun"></i> <!-- Represents weather/automation -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7: Smart Garden Irrigation: Methodology -->
+    <div class="slide slide-7">
+        <div class="slide-content text-gray-900 bg-white bg-opacity-90 rounded-xl shadow-lg">
+            <h2 class="text-5xl font-bold mb-6">Smart Garden: How It Works</h2>
+            <div class="text-left max-w-4xl mx-auto">
+                <h3 class="text-3xl font-semibold mb-4 text-blue-700">Main Components:</h3>
+                <ul class="list-disc list-inside text-xl leading-relaxed mb-6">
+                    <li>**Arduino:** Simulates sensor readings (soil moisture) and actuator behavior (water pump).</li>
+                    <li>**Python Script:** Functions as the primary control interface for the user.</li>
+                </ul>
+                <h3 class="text-3xl font-semibold mb-4 text-green-700">Communication Protocol:</h3>
+                <p class="text-xl leading-relaxed mb-6">`pySerial` for seamless interaction.</p>
+                <h3 class="text-3xl font-semibold mb-4 text-purple-700">Key Commands:</h3>
+                <p class="text-xl leading-relaxed mb-6">`DRY`, `WET`, `PUMP_ON`, `PUMP_OFF`, `AUTO`, `STATUS`.</p>
+                <h3 class="text-3xl font-semibold mb-4 text-yellow-700">Simulation Approach:</h3>
+                <p class="text-xl leading-relaxed mb-6">Validates automation logic cost-effectively before real-world deployment.</p>
+                <h3 class="text-3xl font-semibold mb-4 text-red-700">Modularity:</h3>
+                <p class="text-xl leading-relaxed mb-6">Designed for future integration with actual soil sensors and moisture-detection circuits.</p>
+                <img src="https://placehold.co/400x250/00979D/FFFFFF?text=Arduino+UNO+Board" alt="Arduino UNO Board" class="placeholder-image mx-auto">
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: Smart Garden Irrigation: Experimental Results -->
+    <div class="slide slide-8">
+        <div class="slide-content bg-gray-900 bg-opacity-90 rounded-xl shadow-lg">
+            <h2 class="text-5xl font-bold mb-6">Smart Garden: Test Cases & Outcomes</h2>
+            <div class="text-left max-w-4xl mx-auto">
+                <h3 class="text-3xl font-semibold mb-4 text-blue-300">Verification:</h3>
+                <p class="text-xl leading-relaxed mb-6">Logic and performance verified through various simulated scenarios.</p>
+                <h3 class="text-3xl font-semibold mb-4 text-green-300">Python Interface:</h3>
+                <p class="text-xl leading-relaxed mb-6">Correctly responded to user inputs.</p>
+                <h3 class="text-3xl font-semibold mb-4 text-purple-300">Arduino Processing:</h3>
+                <p class="text-xl leading-relaxed mb-6">Processed commands and returned confirmations efficiently.</p>
+                <h3 class="text-3xl font-semibold mb-4 text-yellow-300">Auto Mode Validation:</h3>
+                <p class="text-xl leading-relaxed mb-6">Soil conditions changed randomly, and pump state toggled as expected.</p>
+                <h3 class="text-3xl font-semibold mb-4 text-red-300">Test Scenarios:</h3>
+                <table class="text-xl">
+                    <thead>
+                        <tr>
+                            <th>Test Case</th>
+                            <th>Command</th>
+                            <th>Expected Output</th>
+                            <th>Observed Output</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pump ON manually</td>
+                            <td>`PUMP_ON`</td>
+                            <td>Pump turns ON</td>
+                            <td>Success</td>
+                        </tr>
+                        <tr>
+                            <td>Soil Wet manually</td>
+                            <td>`WET`</td>
+                            <td>Soil = WET, Pump OFF</td>
+                            <td>Success</td>
+                        </tr>
+                        <tr>
+                            <td>Auto Mode start</td>
+                            <td>`AUTO`</td>
+                            <td>Cycles soil state every 10s</td>
+                            <td>Correct response</td>
+                        </tr>
+                        <tr>
+                            <td>Status Check</td>
+                            <td>`STATUS`</td>
+                            <td>Displays current pump & soil</td>
+                            <td>Accurate</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <img src="https://placehold.co/600x300/222222/00FF00?text=Python+CLI+Output+Screenshot" alt="Python CLI Output" class="placeholder-image mx-auto">
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Conclusion & Future Scope -->
+    <div class="slide slide-9">
+        <div class="slide-overlay"></div>
+        <div class="slide-content bg-black bg-opacity-70 rounded-xl shadow-lg">
+            <h2 class="text-5xl font-bold mb-6">Conclusion & The Road Ahead</h2>
+            <div class="text-left max-w-4xl mx-auto">
+                <h3 class="text-3xl font-semibold mb-4 text-blue-300">Overall Conclusion:</h3>
+                <ul class="list-disc list-inside text-xl leading-relaxed mb-6">
+                    <li>Successfully demonstrated Arduino-Python ecosystems for real-world automation.</li>
+                    <li>Validated device control, safety automation, and auto-presence/irrigation logic.</li>
+                    <li>Serial communication proved stable and efficient for both systems.</li>
+                </ul>
+                <h3 class="text-3xl font-semibold mb-4 text-green-300">Future Scope - Smart Home:</h3>
+                <ul class="list-disc list-inside text-xl leading-relaxed mb-6">
+                    <li>Integrate actual flame, IR, or water level sensors.</li>
+                    <li>Develop GUI-based desktop or mobile dashboards.</li>
+                    <li>Add speech or app-based control (e.g., Google Assistant).</li>
+                    <li>Utilize ESP32 for Wi-Fi-enabled remote access.</li>
+                    <li>Log energy usage data for optimization.</li>
+                </ul>
+                <h3 class="text-3xl font-semibold mb-4 text-purple-300">Future Scope - Smart Garden:</h3>
+                <ul class="list-disc list-inside text-xl leading-relaxed mb-6">
+                    <li>Integrate real moisture sensors.</li>
+                    <li>Expand to weather-based forecasting.</li>
+                    <li>Deploy remote control via mobile or web interfaces.</li>
+                </ul>
+                <p class="text-xl leading-relaxed mt-6 text-yellow-300">**Impact:** Validates the viability of smart irrigation as a scalable and sustainable solution.</p>
+            </div>
+            <div class="icon-set mt-8">
+                <i class="fas fa-rocket"></i>
+                <i class="fas fa-mobile-alt"></i>
+                <i class="fas fa-cloud"></i>
+                <i class="fas fa-cogs"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 10: Thank You & Q&A -->
+    <div class="slide slide-10">
+        <div class="slide-overlay"></div>
+        <div class="slide-content bg-black bg-opacity-70 rounded-xl shadow-lg">
+            <h1 class="text-6xl font-extrabold mb-8">Thank You!</h1>
+            <h2 class="text-4xl font-semibold mb-8">Any Questions?</h2>
+            <div class="text-center text-2xl mt-12">
+                <p>Anushtha Jha Anjali</p>
+                <p>BTECH/15116/22</p>
+                <p>anushthajha.anjali@example.com (Placeholder Email)</p>
+            </div>
+            <div class="icon-set mt-8">
+                <i class="fas fa-question-circle text-6xl"></i>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
